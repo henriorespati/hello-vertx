@@ -31,12 +31,33 @@ VERTX_CONFIG_PATH=conf/application.yaml ./mvnw clean compile exec:java
 
 To build Docker image of your application:
 ```
-./mvnw k8s:build -Pk8s
+./mvnw k8s:build -Pk8s 
+```
+
+or
+
+```
+./mvnw oc:build -Pocp
 ```
 
 To push Docker image of your application into Docker registry:
 ```
 ./mvnw k8s:push -Pk8s
+```
+or
+
+```
+./mvnw oc:push -Pocp
+```
+
+To deploy your application to OpenShift:
+```
+./mvnw oc:resource oc:apply -Pocp
+```
+
+To remove your appliation from OpenShift:
+```
+oc delete all -l app=hello-vertx
 ```
 
 == Help

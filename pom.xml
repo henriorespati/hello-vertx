@@ -31,7 +31,7 @@
 
     <!-- Kubernetes -->
     <kubernetes.default.svc>hello-vertx:${project.version}</kubernetes.default.svc>
-    <base.container.image>quay.io/jkube/jkube-java-17:latest</base.container.image>
+    <jkube.generator.from>quay.io/jkube/jkube-java-17:latest</jkube.generator.from>
     <container.image.tag>${project.version}</container.image.tag>
     <jkube.enricher.jkube-controller.type>Deployment</jkube.enricher.jkube-controller.type>
   </properties>
