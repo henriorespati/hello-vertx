@@ -25,13 +25,14 @@
     <netty-resolver-dns-native-macos.version>4.1.99.Final</netty-resolver-dns-native-macos.version>
     <hazelcast-kubernetes.version>2.2.3</hazelcast-kubernetes.version>
     <fluentd-log4j-appender.version>1.0.0</fluentd-log4j-appender.version>
+    <jkube-builder.version>0.0.23</jkube-builder.version>
 
     <main.verticle>com.redhat.rharyanto.hellovertx.MainVerticle</main.verticle>
     <launcher.class>com.redhat.rharyanto.hellovertx.Application</launcher.class>
 
     <!-- Kubernetes -->
     <kubernetes.default.svc>hello-vertx:${project.version}</kubernetes.default.svc>
-    <jkube.generator.from>quay.io/jkube/jkube-java-17:latest</jkube.generator.from>
+    <jkube.generator.from>quay.io/jkube/jkube-java-17:${jkube-builder.version}</jkube.generator.from>
     <container.image.tag>${project.version}</container.image.tag>
     <jkube.enricher.jkube-controller.type>Deployment</jkube.enricher.jkube-controller.type>
   </properties>
