@@ -11,12 +11,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <maven-compiler-plugin.version>	3.11.0</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
     <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
     <maven-dependency-plugin.version>3.6.0</maven-dependency-plugin.version>
-    <kubernetes-maven-plugin.version>1.14.0</kubernetes-maven-plugin.version>
+    <kubernetes-maven-plugin.version>1.16.2</kubernetes-maven-plugin.version>
 
     <vertx.version>4.4.5</vertx.version>
     <lombok.version>1.18.30</lombok.version>
@@ -31,8 +31,9 @@
 
     <!-- Kubernetes -->
     <kubernetes.default.svc>hello-vertx:${project.version}</kubernetes.default.svc>
-    <base.container.image>quay.io/rh_rh/jkube:latest</base.container.image>
+    <base.container.image>quay.io/jkube/jkube-java-17:latest</base.container.image>
     <container.image.tag>${project.version}</container.image.tag>
+    <jkube.enricher.jkube-controller.type>Deployment</jkube.enricher.jkube-controller.type>
   </properties>
 
   <developers>
@@ -201,7 +202,7 @@
               <verbose>true</verbose>
               <images>
                 <image>
-                  <name>quay.io/rh_rh/hello-vertx:${container.image.tag}</name>
+                  <name>quay.io/hrespati/hello-vertx:${container.image.tag}</name>
                   <build>
                     <from>${base.container.image}</from>
                     <maintainer>rharyant@redhat.com</maintainer>

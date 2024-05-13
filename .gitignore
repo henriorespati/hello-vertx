@@ -38,3 +38,5 @@ build/
 *.userlibraries
 
 app.env
+.java-version
+dependency-reduced-pom.xml

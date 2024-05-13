@@ -2,8 +2,8 @@
 # base operating system image purpose built for containers. For more information
 # see https://developers.redhat.com/products/rhel/ubi
 #
-FROM quay.io/jkube/jkube-java:0.0.19
-MAINTAINER Robertus Lilik Haryanto <rharyant@redhat.com>
+FROM quay.io/jkube/jkube-java-17:0.0.23
+LABEL authors "Robertus Lilik Haryanto <rharyant@redhat.com>"
 USER root
 
 ENV APP_NAME "hello-vertx"
