@@ -19,9 +19,8 @@ spec:
     type: Source
     sourceStrategy:
       from:
-        kind: ImageStreamTag
-        namespace: openshift
-        name: 'java:openjdk-17-ubi8'
+        kind: DockerImage
+        name: 'quay.io/jkube/jkube-java-17:0.0.23'
   source:
     type: Git
     git:
