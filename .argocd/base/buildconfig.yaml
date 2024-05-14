@@ -5,7 +5,6 @@ metadata:
     app.openshift.io/vcs-ref: main
     app.openshift.io/vcs-uri: 'https://github.com/henriorespati/hello-vertx.git'
   name: hello-vertx-s2i
-  namespace: openshift-gitops
   labels:
     app: hello-vertx
     app.kubernetes.io/name: hello-vertx
