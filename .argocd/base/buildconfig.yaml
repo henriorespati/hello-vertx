@@ -1,0 +1,27 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: main
+    app.openshift.io/vcs-uri: 'https://github.com/henriorespati/hello-vertx.git'
+  name: hello-vertx-s2i
+  namespace: openshift-gitops
+  labels:
+    app: hello-vertx
+    app.kubernetes.io/name: hello-vertx
+    app.kubernetes.io/part-of: com.redhat.rharyanto.hellovertx
+    group: com.redhat.rharyanto.hellovertx
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'hello-vertx:latest'
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: DockerImage
+        name: 'openshift/ubi8-openjdk-17:1.12'
+  source:
+    type: Binary
+  runPolicy: Serial
