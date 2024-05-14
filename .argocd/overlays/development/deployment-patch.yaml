@@ -7,6 +7,7 @@ spec:
     spec:
       containers:
       - name: vertx
+        image: image-registry.openshift-image-registry.svc:5000/hello-vertx-dev/hello-vertx:latest
         env:
         - name: VERTX_CONFIG_PATH
           value: conf/application.dev.yaml
