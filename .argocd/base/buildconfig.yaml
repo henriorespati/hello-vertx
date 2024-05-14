@@ -20,7 +20,7 @@ spec:
     sourceStrategy:
       from:
         kind: DockerImage
-        name: 'openshift/ubi8-openjdk-17:1.12'
+        name: 'image-registry.openshift-image-registry.svc:5000/openshift/ubi8-openjdk-17:1.12'
   source:
     type: Binary
   runPolicy: Serial
