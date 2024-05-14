@@ -2,7 +2,7 @@
 # base operating system image purpose built for containers. For more information
 # see https://developers.redhat.com/products/rhel/ubi
 #
-FROM quay.io/jkube/jkube-java-17:0.0.23
+FROM registry.access.redhat.com/ubi8/openjdk-17:latest
 LABEL authors "Robertus Lilik Haryanto <rharyant@redhat.com>"
 USER root
 
