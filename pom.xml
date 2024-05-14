@@ -257,7 +257,7 @@
       </build>
     </profile>
     <profile>
-      <id>ocp</id>
+      <id>openshift</id>
       <build>
         <plugins>
           <plugin>
