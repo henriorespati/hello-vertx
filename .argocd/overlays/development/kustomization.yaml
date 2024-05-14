@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+commonLabels:
+  app: hello-vertx
+
+patches:
+  - target:
+      kind: Deployment
+      name: hello-vertx
+    path: deployment-patch.yaml

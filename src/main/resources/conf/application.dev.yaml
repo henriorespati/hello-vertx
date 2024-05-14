@@ -3,4 +3,4 @@ server:
   path: "/"
 
 banner:
-  file: "/banner.txt"
+  file: "/banner-dev.txt"

@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: main
+    app.openshift.io/vcs-uri: https://github.com/henriorespati/hello-vertx.git
+  labels:
+    app: hello-vertx
+    group: com.redhat.rharyanto.hellovertx
+    app.kubernetes.io/part-of: com.redhat.rharyanto.hellovertx
+    app.kubernetes.io/name: hello-vertx
+  name: hello-vertx
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: hello-vertx

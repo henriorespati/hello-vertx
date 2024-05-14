@@ -4,4 +4,4 @@
  / / / /  __/ / / /_/ /_____/ |/ /  __/ /  / /__>  <
 /_/ /_/\___/_/_/\____/      |___/\___/_/   \__/_/|_|
 
-Hello Vert.x Application 
+Hello Vert.x Application :: DEVELOPMENT

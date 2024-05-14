@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-vertx
+spec:
+  template:
+    spec:
+      containers:
+      - name: vertx
+        env:
+        - name: VERTX_CONFIG_PATH
+          value: conf/application.dev.yaml
