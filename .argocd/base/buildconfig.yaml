@@ -23,5 +23,8 @@ spec:
         namespace: openshift
         name: 'java:openjdk-17-ubi8'
   source:
-    type: Binary
+    type: Git
+    git:
+      uri: 'https://github.com/henriorespati/hello-vertx.git'
+    contextDir: /
   runPolicy: Serial
