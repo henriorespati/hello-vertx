@@ -24,6 +24,7 @@ RUN \
 
 USER jboss
 WORKDIR ${APP_BASEDIR}
+RUN ./mvnw package
 COPY target/${APP_NAME}-${APP_VERSION}.jar ${APP_BASEDIR}
 
 EXPOSE 9090
