@@ -27,6 +27,8 @@ COPY src ${APP_BASEDIR}/src
 COPY .mvn ${APP_BASEDIR}/.mvn
 COPY pom.xml mvnw ${APP_BASEDIR}/
 
+WORKDIR ${APP_BASEDIR}
+
 RUN \
     ./mvnw package -DskipTests && \
     mv target/${APP_NAME}-${APP_VERSION}.jar . && \
@@ -34,7 +36,7 @@ RUN \
     chown -R jboss ${APP_BASEDIR}
 
 USER jboss
-WORKDIR ${APP_BASEDIR}
+
 EXPOSE 9090
 
 ENV JAVA_APP_JAR "${APP_BASEDIR}/${APP_NAME}-${APP_VERSION}.jar"
