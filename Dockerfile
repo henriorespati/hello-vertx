@@ -20,7 +20,8 @@ RUN \
     microdnf clean all && rm -rf /var/cache/yum
 
 RUN \
-    mkdir -pv /opt/app
+    mkdir -pv /opt/app && \
+    chown -R jboss /opt/app
 
 COPY src ${APP_BASEDIR}/src
 COPY .mvn ${APP_BASEDIR}/.mvn
