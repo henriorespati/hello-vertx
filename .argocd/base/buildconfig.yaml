@@ -16,11 +16,9 @@ spec:
       kind: ImageStreamTag
       name: 'hello-vertx:latest'
   strategy:
-    type: Source
-    sourceStrategy:
-      from:
-        kind: DockerImage
-        name: 'quay.io/jkube/jkube-java-17:0.0.23'
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
   source:
     type: Git
     git:
