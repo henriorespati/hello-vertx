@@ -24,15 +24,14 @@ RUN \
     mkdir -pv /opt/app 
 
 COPY src ${APP_BASEDIR}/src
-COPY .mvn ${APP_BASEDIR}/.mvn
-COPY pom.xml mvnw ${APP_BASEDIR}/
+COPY pom.xml ${APP_BASEDIR}/
 
 WORKDIR ${APP_BASEDIR}
 
 RUN \
-    ./mvnw package -DskipTests && \
+    mvn package -DskipTests && \
     mv target/${APP_NAME}-${APP_VERSION}.jar . && \
-    rm -rf src .mvn target pom.xml mvnw && \
+    rm -rf src target pom.xml && \
     chown -R jboss ${APP_BASEDIR}
 
 USER jboss
