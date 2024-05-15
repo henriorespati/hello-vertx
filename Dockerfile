@@ -29,9 +29,7 @@ COPY pom.xml mvnw ${APP_BASEDIR}/
 
 USER jboss
 WORKDIR ${APP_BASEDIR}
-RUN ./mvnw package -DskipTests && ls -lah target
-
-COPY ${APP_BASEDIR}/target/${APP_NAME}-${APP_VERSION}.jar ${APP_BASEDIR}
+RUN ./mvnw package -DskipTests && mv target/${APP_NAME}-${APP_VERSION}.jar . && rm -rf src .mvn target pom.xml mvnw
 
 EXPOSE 9090
 
