@@ -30,9 +30,11 @@ WORKDIR ${APP_BASEDIR}
 
 RUN \
     mvn package -DskipTests && \
+    ls -la target && \
     mv target/${APP_NAME}-${APP_VERSION}.jar . && \
     rm -rf src target pom.xml && \
-    chown -R jboss ${APP_BASEDIR}
+    chown -R jboss ${APP_BASEDIR} && \
+    ls -la
 
 USER jboss
 
