@@ -23,7 +23,7 @@ RUN \
     mkdir -pv /opt/app
 
 COPY src ${APP_BASEDIR}/src
-COPY pom.xml mvnw ${APP_BASEDIR}/
+COPY pom.xml mvnw .mvn ${APP_BASEDIR}/
 
 USER jboss
 WORKDIR ${APP_BASEDIR}
