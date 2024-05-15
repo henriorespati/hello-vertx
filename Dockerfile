@@ -29,7 +29,7 @@ COPY pom.xml mvnw ${APP_BASEDIR}/
 
 USER jboss
 WORKDIR ${APP_BASEDIR}
-RUN ./mvnw package -DskipTests && ls -lah
+RUN ./mvnw package -DskipTests && ls -lah target
 
 COPY ${APP_BASEDIR}/target/${APP_NAME}-${APP_VERSION}.jar ${APP_BASEDIR}
 
