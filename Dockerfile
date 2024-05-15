@@ -4,6 +4,7 @@
 #
 FROM registry.access.redhat.com/ubi8/openjdk-17:latest
 LABEL authors "Robertus Lilik Haryanto <rharyant@redhat.com>"
+
 USER root
 
 ENV APP_NAME "hello-vertx"
@@ -20,17 +21,20 @@ RUN \
     microdnf clean all && rm -rf /var/cache/yum
 
 RUN \
-    mkdir -pv /opt/app && \
-    chown -R jboss /opt/app
+    mkdir -pv /opt/app 
 
 COPY src ${APP_BASEDIR}/src
 COPY .mvn ${APP_BASEDIR}/.mvn
 COPY pom.xml mvnw ${APP_BASEDIR}/
 
+RUN \
+    ./mvnw package -DskipTests && \
+    mv target/${APP_NAME}-${APP_VERSION}.jar . && \
+    rm -rf src .mvn target pom.xml mvnw && \
+    chown -R jboss ${APP_BASEDIR}
+
 USER jboss
 WORKDIR ${APP_BASEDIR}
-RUN ./mvnw package -DskipTests && mv target/${APP_NAME}-${APP_VERSION}.jar . && rm -rf src .mvn target pom.xml mvnw
-
 EXPOSE 9090
 
 ENV JAVA_APP_JAR "${APP_BASEDIR}/${APP_NAME}-${APP_VERSION}.jar"
